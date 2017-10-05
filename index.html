@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id = 'heading' class = 'container'>
+    <nav class="navbar navbar-default navbar-tabs">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="logo.png" alt="logo" class ="logo">
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">About</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+          </ul>
+          
+        </div>
+    </nav>
+  </div>
+  <div class="container-fluid" id = 'about'>
+      <div class="jumbotron col-sm-8">
+          <h1>Спа-отель Пандоракс</h1> 
+          
+        <p>Если вы ищете место для смены обстановки или отдыха, то вашему вниманию предлагаются комфортабельные номера нашего отеля </p> 
+        <p>На территории отеля найдется все для самых искушенных гостей, начиная спа-процедурами, такими как массажный кабинет, кабинет с инновационной технологией ультразвукового пилинга, ресторанами с ведущими шеф-поварами города, на территории так же имеется полностью укомплектованный фитнес-зал</p> 
+        
+      </div>
+        <div class="col-sm-4"><img src="img/about-bg.jpg" alt="" class = "about-bg"></div>
+          
+        
+  </div>
+
+
+  <div class="container" id="booking">
+    <div class="row">
+      <div class="nest"><span class="col-sm-3 procInd"></span></div>
+      <div class="nest"><span class="col-sm-3 procInd"></span></div>
+      <div class="nest"><span class="col-sm-3 procInd"></span></div>
+      <div class="nest"><span class="col-sm-3 procInd"></span></div>
+      
+      
+    
+      
+    </div>
+  <form action="">
+      <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group form-inline">
+          <label for="CheckIn">Дата въезда</label>
+          <input type="date" class="form-control" id="CheckIn">
+        
+            <label for="CheckOut">Дата выезда</label>
+            <input type="date" class="form-control" id="CheckOut">
+          </div>
+        <div class="checkbox">
+          <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+
+  </div>
+  <div id="advice" style = "opacity: 0;" class="alert alert-info alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Нужна помощь?</strong> Нажмите <button type="button" class="btn btn-link">сюда</button>, чтобы открыть меню бронирования номера.
+  </div>
+  <script>
+  function advice(){
+    document.getElementById("advice").style.opacity = "1";
+  }
+  //document.addEventListener("DOMContentLoaded",setTimeout('advice()',2000));
+  var no_active_delay = 5;
+  var now_no_active = 0;
+  setInterval("now_no_active++",1000);
+  setInterval("adviceSend()",1000);
+    
+    document.onscroll = activeUser;
+    
+    function activeUser() {
+    now_no_active = 0; 
+  }
+    function adviceSend(){
+      if(now_no_active >= no_active_delay){
+        advice();
+        
+      }
+      
+    }
+
+  
+  </script>
+</body>
+</html>
